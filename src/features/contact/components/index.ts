@@ -1,2 +1,2 @@
-// Feature components for the Contact module live here.
-export {};
+export * from "./contact-banner";
+export * from "./contact-form";

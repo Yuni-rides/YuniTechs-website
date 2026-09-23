@@ -200,7 +200,7 @@ export function KeyTechnologies() {
                                 strokeWidth={2}
                                 aria-hidden
                               />
-                              {item.name}
+                              {item.name} 
                             </span>
                           </li>
                         );

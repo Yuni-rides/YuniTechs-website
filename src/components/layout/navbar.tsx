@@ -111,18 +111,27 @@ export function Navbar() {
   );
 }
 
-export function LetsTalk({ className }: { className?: string }) {
+export function LetsTalk({
+  className,
+  label = "Lets Talk",
+  href = "/contact",
+}: {
+  className?: string;
+  /** Button copy - e.g. "Future Insights" on the services banner. */
+  label?: string;
+  href?: string;
+}) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <Link
-        href="/contact"
+        href={href}
         className="text-brand-primary hover:bg-brand-tertiary inline-flex h-11 items-center rounded-full bg-white px-6 text-xs font-medium tracking-wider uppercase transition-colors"
       >
-        Lets Talk
+        {label}
       </Link>
       <Link
-        href="/contact"
-        aria-label="Contact us"
+        href={href}
+        aria-label={label}
         className="text-brand-primary hover:bg-brand-tertiary grid size-11 place-items-center rounded-full bg-white transition-colors"
       >
         <ArrowUpLeft className="size-5" aria-hidden />

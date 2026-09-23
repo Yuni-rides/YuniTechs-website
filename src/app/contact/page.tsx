@@ -1,5 +1,4 @@
-import { SectionHeading } from "@/components/shared";
-import { Container } from "@/components/ui";
+import { ContactBanner, ContactForm } from "@/features/contact";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -10,14 +9,10 @@ export const metadata = buildMetadata({
 
 export default function ContactPage() {
   return (
-    <section className="py-20 sm:py-28">
-      <Container>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let's build something together"
-          description="Contact form coming soon."
-        />
-      </Container>
-    </section>
+    <>
+      <ContactBanner />
+
+      <ContactForm />
+    </>
   );
 }
