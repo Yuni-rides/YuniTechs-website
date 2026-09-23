@@ -3,6 +3,7 @@ import {
   ClientReviews,
   CtaBanner,
   HomeBanner,
+  HomeBlog,
   KeyTechnologies,
   OurWork,
   TrustedBy,
@@ -23,6 +24,7 @@ export default function HomePage() {
       <ServicesAccordion />
       <ClientReviews />
       <KeyTechnologies />
+      <HomeBlog />
       <AiAutomation />
       <Faq
         items={homeFaqs}

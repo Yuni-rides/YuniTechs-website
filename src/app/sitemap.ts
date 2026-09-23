@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/features/articles/data/articles";
+import { projects } from "@/features/projects/data/projects";
 import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,5 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...articlePages];
+  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${siteConfig.url}/projects/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...articlePages, ...projectPages];
 }

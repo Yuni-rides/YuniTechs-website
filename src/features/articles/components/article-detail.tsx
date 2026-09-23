@@ -9,8 +9,12 @@ import {
   YoutubeIcon,
 } from "@/components/shared";
 import { ArticleCard } from "@/features/articles/components/article-card";
-import type { Article } from "@/features/articles/data/articles";
+import {
+  getFilterLabel,
+  type Article,
+} from "@/features/articles/data/articles";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 const socials = [
   { label: "LinkedIn", href: siteConfig.links.linkedin, Icon: LinkedinIcon },
@@ -92,7 +96,7 @@ export function ArticleDetail({
             </div>
           </div>
 
-          <div className="bg-brand-secondary relative z-10 mx-auto mt-10 mb-[-14%] w-[90%] rounded-xl p-2 lg:p-8 shadow-xl">
+          <div className="bg-brand-secondary relative z-10 mx-auto mt-10 mb-[-14%] w-[90%] rounded-xl p-2 shadow-xl lg:p-8">
             <div className="relative aspect-[430/267] overflow-hidden rounded-lg">
               <Image
                 src={article.image}
@@ -109,44 +113,54 @@ export function ArticleDetail({
       </header>
 
       <Container>
-        <div className="mx-auto max-w-3xl pt-[calc(18%+2rem)] pb-14 lg:pb-20">
-          <p className="border-brand-secondary border-l-2 pl-5 text-base leading-relaxed text-white/90">
-            {article.excerpt}
+        <div className="grid gap-8 pt-[calc(18%+2rem)] pb-14 lg:grid-cols-[minmax(0,30%)_minmax(0,70%)] lg:gap-10 lg:pb-20">
+          {/* Topic — the filter tab this article belongs to */}
+          <p className="bg-brand-secondary text-brand-primary flex h-fit w-full flex-wrap items-center gap-4 rounded-lg px-6 py-4 shadow-[0_10px_28px_-8px_rgb(0_0_0_/_0.65)]">
+            <span className="text-sm font-bold tracking-wide uppercase">
+              Topic:
+            </span>
+            <span className="text-[13px] tracking-wide uppercase">
+              {getFilterLabel(article.filter)}
+            </span>
           </p>
 
-          {article.sections.map((section, index) => (
-            <section key={section.heading} className="mt-12">
-              <h2 className="text-brand-secondary text-lg tracking-wide uppercase">
-                {index + 1}. {section.heading}
-              </h2>
+          <div>
+            {article.sections.map((section, index) => (
+              <section key={section.heading} className="mt-12 first:mt-0">
+                <h2 className="text-2xl leading-snug tracking-tight text-white uppercase sm:text-[2rem]">
+                  {index + 1}. {section.heading}
+                </h2>
 
-              {section.body.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="mt-4 text-sm leading-relaxed text-white/80"
-                >
-                  {paragraph}
-                </p>
-              ))}
+                {section.body.map((paragraph, i) => (
+                  <p
+                    key={paragraph}
+                    className={cn(
+                      "text-[13px] leading-relaxed text-white/75 sm:text-justify",
+                      i === 0 ? "mt-6" : "mt-1",
+                    )}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
 
-              {section.bullets && (
-                <ul className="mt-5 space-y-2.5">
-                  {section.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start gap-3 text-sm text-white/80"
-                    >
-                      <span
-                        aria-hidden
-                        className="bg-brand-secondary mt-2 size-1.5 shrink-0 rounded-full"
-                      />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
+                {section.bullets && (
+                  <ul className="mt-1 pl-4">
+                    {section.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="text-[13px] leading-relaxed text-white/75 sm:text-justify"
+                      >
+                        <span aria-hidden className="mr-2">
+                          ·
+                        </span>
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            ))}
+          </div>
         </div>
       </Container>
 

@@ -33,7 +33,7 @@ export function Navbar() {
               className="h-8 w-auto lg:h-9"
             />
             <span className="text-xl font-medium text-white lg:text-2xl">
-              Yuni Solution
+              Yunitechs
             </span>
           </Link>
 

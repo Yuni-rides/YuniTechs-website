@@ -394,3 +394,8 @@ export function getRelatedArticles(slug: string, limit = 3) {
   );
   return [...sameFilter, ...rest].slice(0, limit);
 }
+
+/** Label of the filter tab an article belongs to — shown as its "Topic". */
+export function getFilterLabel(id: FilterId) {
+  return filters.find((filter) => filter.id === id)?.label ?? id;
+}

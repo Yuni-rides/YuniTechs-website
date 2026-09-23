@@ -26,7 +26,7 @@ export function ServicesBanner() {
           <div className="mt-8 grid items-end gap-10 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,240px)] lg:gap-12">
             <motion.div variants={fadeInUp}>
               <Image
-                src="/images/serviceBanner.png"
+                src="/images/webService.png"
                 alt="A selection of websites and product interfaces built by Yuni Solution"
                 width={1008}
                 height={410}

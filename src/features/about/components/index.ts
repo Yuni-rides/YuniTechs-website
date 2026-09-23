@@ -1,2 +1,1 @@
-// Feature components for the About module live here.
-export {};
+export * from "./about-banner";

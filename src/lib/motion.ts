@@ -1,6 +1,5 @@
 import type { Variants } from "framer-motion";
 
-/** Shared Framer Motion variants — keep animations consistent across features. */
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -20,5 +19,4 @@ export const staggerContainer = (stagger = 0.1, delay = 0): Variants => ({
   visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
 });
 
-/** Default viewport config for scroll-triggered animations. */
 export const viewportOnce = { once: true, amount: 0.25 } as const;

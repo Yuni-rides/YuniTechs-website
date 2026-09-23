@@ -1,23 +1,13 @@
-import { SectionHeading } from "@/components/shared";
-import { Container } from "@/components/ui";
+import { AboutBanner } from "@/features/about";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "About",
-  description: "Learn about the team and mission behind Yuni Solutions.",
+  description:
+    "Yuni Solutions is a team of developers, designers, and strategists building software that moves businesses forward.",
   path: "/about",
 });
 
 export default function AboutPage() {
-  return (
-    <section className="py-20 sm:py-28">
-      <Container>
-        <SectionHeading
-          eyebrow="About us"
-          title="Engineering with purpose"
-          description="Content coming soon."
-        />
-      </Container>
-    </section>
-  );
+  return <AboutBanner />;
 }

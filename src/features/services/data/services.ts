@@ -1,12 +1,11 @@
 import type { Service } from "@/types";
 
-// TODO: swap per-service images once the designer provides them.
-const placeholderImage = {
-  src: "/images/webService.png",
+const serviceImage = (fileName: string, alt: string) => ({
+  src: `/images/${fileName}.png`,
   width: 504,
   height: 355,
-  alt: "Collage of website designs built by Yuni Solution",
-};
+  alt,
+});
 
 export const services: Service[] = [
   {
@@ -20,7 +19,10 @@ export const services: Service[] = [
       "Node.js Website Development",
       "WordPress Website Development",
     ],
-    image: placeholderImage,
+    image: serviceImage(
+      "webService",
+      "Collage of website designs built by Yuni Solution",
+    ),
     href: "/services/website-development",
   },
   {
@@ -34,7 +36,10 @@ export const services: Service[] = [
       "Marketing Collateral",
       "Social Media Creatives",
     ],
-    image: placeholderImage,
+    image: serviceImage(
+      "brandService",
+      "Branding and design work by Yuni Solution",
+    ),
     href: "/services/branding-design",
   },
   {
@@ -48,7 +53,7 @@ export const services: Service[] = [
       "Customer Data Management",
       "Reporting Dashboards",
     ],
-    image: placeholderImage,
+    image: serviceImage("crmService", "CRM dashboards built by Yuni Solution"),
     href: "/services/crm-system",
   },
   {
@@ -62,7 +67,10 @@ export const services: Service[] = [
       "Inventory Management",
       "Conversion Optimisation",
     ],
-    image: placeholderImage,
+    image: serviceImage(
+      "ecommerceService",
+      "E-commerce storefronts built by Yuni Solution",
+    ),
     href: "/services/e-commerce",
   },
   {
@@ -76,22 +84,28 @@ export const services: Service[] = [
       "Performance Optimisation",
       "Analytics Integration",
     ],
-    image: placeholderImage,
+    image: serviceImage(
+      "landingPageService",
+      "Landing pages designed by Yuni Solution",
+    ),
     href: "/services/landing-page",
   },
   {
-    slug: "redesign",
-    title: "Redesign",
+    slug: "ai-automation",
+    title: "AI Automation",
     items: [
-      "UX Audit",
-      "Visual Refresh",
-      "Information Architecture",
-      "Performance Upgrade",
-      "Accessibility Improvements",
-      "Content Migration",
+      "AI Chatbots & Assistants",
+      "Workflow Automation",
+      "Custom AI Agents",
+      "Process Automation (RPA)",
+      "LLM & API Integration",
+      "AI Data Analysis & Reporting",
     ],
-    image: placeholderImage,
-    href: "/services/redesign",
+    image: serviceImage(
+      "aiService",
+      "AI automation solutions built by Yuni Solution",
+    ),
+    href: "/services/ai-automation",
   },
   {
     slug: "application-development",
@@ -104,7 +118,7 @@ export const services: Service[] = [
       "Progressive Web Apps",
       "API Development",
     ],
-    image: placeholderImage,
+    image: serviceImage("appService", "Mobile apps developed by Yuni Solution"),
     href: "/services/application-development",
   },
   {
@@ -118,7 +132,10 @@ export const services: Service[] = [
       "Local SEO",
       "SEO Audits & Reporting",
     ],
-    image: placeholderImage,
+    image: serviceImage(
+      "seoService",
+      "SEO performance reports by Yuni Solution",
+    ),
     href: "/services/search-engine-optimisation",
   },
 ];
