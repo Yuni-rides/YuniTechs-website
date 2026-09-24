@@ -156,14 +156,14 @@ export function ContactForm() {
               <div className="group flex items-center gap-2">
                 <Link
                   href="/contact#get-in-touch-heading"
-                  className="bg-brand-secondary hover:bg-brand-secondary-dark inline-flex h-11 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
+                  className="bg-brand-secondary group-hover:bg-brand-secondary-dark inline-flex h-11 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
                 >
                   Book meeting
                 </Link>
                 <Link
                   href="/contact#get-in-touch-heading"
                   aria-label="Book a meeting"
-                  className="bg-brand-secondary hover:bg-brand-secondary-dark grid size-11 place-items-center rounded-full text-white transition-colors"
+                  className="bg-brand-secondary group-hover:bg-brand-secondary-dark grid size-11 place-items-center rounded-full text-white transition-colors"
                 >
                   <ArrowUpLeft
                     className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
@@ -309,7 +309,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="bg-brand-secondary hover:bg-brand-secondary-dark inline-flex h-11 items-center rounded-full px-7 text-[11px] font-medium tracking-wider text-white uppercase transition-colors disabled:opacity-60"
+                  className="bg-brand-secondary group-hover:bg-brand-secondary-dark inline-flex h-11 items-center rounded-full px-7 text-[11px] font-medium tracking-wider text-white uppercase transition-colors disabled:opacity-60"
                 >
                   {status === "sending" ? "Sending…" : "Submit"}
                 </button>

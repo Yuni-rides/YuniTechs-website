@@ -36,14 +36,14 @@ export function ProjectDetail({
             <div className="group flex shrink-0 items-center gap-2">
               <Link
                 href="/projects"
-                className="bg-brand-primary hover:bg-brand-primary-light inline-flex h-9 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
+                className="bg-brand-primary group-hover:bg-brand-primary-light inline-flex h-9 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
               >
                 Back
               </Link>
               <Link
                 href="/projects"
                 aria-label="Back to all projects"
-                className="bg-brand-primary hover:bg-brand-primary-light grid size-9 place-items-center rounded-full text-white transition-colors"
+                className="bg-brand-primary group-hover:bg-brand-primary-light grid size-9 place-items-center rounded-full text-white transition-colors"
               >
                 <ArrowUpLeft
                   className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"

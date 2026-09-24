@@ -152,17 +152,17 @@ export function Footer() {
               Ready to start your next digital project?
             </p>
 
-            <div className="mt-5 flex items-center gap-2">
+            <div className="group mt-5 flex items-center gap-2">
               <Link
                 href="/contact"
-                className="bg-brand-primary text-brand-secondary hover:bg-brand-primary-light inline-flex h-11 items-center rounded-full px-6 text-xs font-medium tracking-wider uppercase transition-colors"
+                className="bg-brand-primary text-brand-secondary group-hover:bg-brand-primary-light inline-flex h-11 items-center rounded-full px-6 text-xs font-medium tracking-wider uppercase transition-colors"
               >
                 Let&apos;s build together
               </Link>
               <Link
                 href="/contact"
                 aria-label="Contact us"
-                className="bg-brand-primary text-brand-secondary hover:bg-brand-primary-light grid size-11 place-items-center rounded-full transition-colors"
+                className="bg-brand-primary text-brand-secondary group-hover:bg-brand-primary-light grid size-11 place-items-center rounded-full transition-colors"
               >
                 <ArrowUpLeft className="size-5" aria-hidden />
               </Link>

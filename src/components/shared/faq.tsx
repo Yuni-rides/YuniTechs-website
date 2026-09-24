@@ -84,17 +84,17 @@ export function Faq({
               </div>
             )}
             {cta && (
-              <div className="mt-6 flex items-center gap-2">
+              <div className="group mt-6 flex items-center gap-2">
                 <Link
                   href={cta.href}
-                  className="text-brand-primary hover:bg-brand-tertiary inline-flex h-10 items-center rounded-full bg-white px-5 text-[10px] font-medium tracking-wider uppercase transition-colors"
+                  className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-10 items-center rounded-full bg-white px-5 text-[10px] font-medium tracking-wider uppercase transition-colors"
                 >
                   {cta.label}
                 </Link>
                 <Link
                   href={cta.href}
                   aria-label={cta.label}
-                  className="text-brand-primary hover:bg-brand-tertiary grid size-10 place-items-center rounded-full bg-white transition-colors"
+                  className="text-brand-primary group-hover:bg-brand-tertiary grid size-10 place-items-center rounded-full bg-white transition-colors"
                 >
                   <ArrowUpLeft
                     className="size-4"

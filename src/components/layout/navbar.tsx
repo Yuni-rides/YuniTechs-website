@@ -122,17 +122,17 @@ export function LetsTalk({
   href?: string;
 }) {
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("group flex items-center gap-2", className)}>
       <Link
         href={href}
-        className="text-brand-primary hover:bg-brand-tertiary inline-flex h-11 items-center rounded-full bg-white px-6 text-xs font-medium tracking-wider uppercase transition-colors"
+        className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-11 items-center rounded-full bg-white px-6 text-xs font-medium tracking-wider uppercase transition-colors"
       >
         {label}
       </Link>
       <Link
         href={href}
         aria-label={label}
-        className="text-brand-primary hover:bg-brand-tertiary grid size-11 place-items-center rounded-full bg-white transition-colors"
+        className="text-brand-primary group-hover:bg-brand-tertiary grid size-11 place-items-center rounded-full bg-white transition-colors"
       >
         <ArrowUpLeft className="size-5" aria-hidden />
       </Link>

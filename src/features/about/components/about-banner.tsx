@@ -71,7 +71,6 @@ export function AboutBanner() {
     >
       <Container>
         <div className="relative aspect-[553/298] overflow-hidden">
-         
           <motion.div
             style={{ y: figureY, x: figureShiftX }}
             className="pointer-events-none absolute top-[4%] left-[25%] z-30 w-[54.5%]"

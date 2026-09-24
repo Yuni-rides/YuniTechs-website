@@ -120,17 +120,17 @@ export function KeyTechnologies() {
                 Leveraging modern technologies to build scalable, innovative,
                 and future-ready digital solutions.
               </p>
-              <div className="mt-5 flex items-center gap-2">
+              <div className="group mt-5 flex items-center gap-2">
                 <Link
                   href="/contact"
-                  className="text-brand-primary hover:bg-brand-primary inline-flex h-10 items-center rounded-full bg-white px-5 text-[10px] font-medium tracking-wider uppercase transition-colors hover:text-white"
+                  className="text-brand-primary group-hover:bg-brand-primary inline-flex h-10 items-center rounded-full bg-white px-5 text-[10px] font-medium tracking-wider uppercase transition-colors group-hover:text-white"
                 >
                   Become a client
                 </Link>
                 <Link
                   href="/contact"
                   aria-label="Become a client"
-                  className="text-brand-primary hover:bg-brand-primary grid size-10 place-items-center rounded-full bg-white transition-colors hover:text-white"
+                  className="text-brand-primary group-hover:bg-brand-primary grid size-10 place-items-center rounded-full bg-white transition-colors group-hover:text-white"
                 >
                   <ArrowUpLeft
                     className="size-4"

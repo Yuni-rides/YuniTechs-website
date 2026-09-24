@@ -120,17 +120,17 @@ export function ServicesAccordion() {
                             ))}
                           </ul>
 
-                          <div className="mt-12 flex items-center gap-2">
+                          <div className="group mt-12 flex items-center gap-2">
                             <Link
                               href={service.href}
-                              className="text-brand-primary hover:bg-brand-tertiary inline-flex h-11 items-center rounded-full bg-white px-7 text-xs tracking-wider uppercase transition-colors"
+                              className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-11 items-center rounded-full bg-white px-7 text-xs tracking-wider uppercase transition-colors"
                             >
                               View service details
                             </Link>
                             <Link
                               href={service.href}
                               aria-label={`${service.title} details`}
-                              className="text-brand-primary hover:bg-brand-tertiary grid size-11 place-items-center rounded-full bg-white transition-colors"
+                              className="text-brand-primary group-hover:bg-brand-tertiary grid size-11 place-items-center rounded-full bg-white transition-colors"
                             >
                               <ArrowUpLeft
                                 className="size-4"

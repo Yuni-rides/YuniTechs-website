@@ -78,14 +78,14 @@ export function ArticleDetail({
             <div className="group flex items-center gap-2">
               <Link
                 href="/articles"
-                className="bg-brand-primary hover:bg-brand-primary-light inline-flex h-9 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
+                className="bg-brand-primary group-hover:bg-brand-primary-light inline-flex h-9 items-center rounded-full px-6 text-[11px] font-medium tracking-wider text-white uppercase transition-colors"
               >
                 Back
               </Link>
               <Link
                 href="/articles"
                 aria-label="Back to all articles"
-                className="bg-brand-primary hover:bg-brand-primary-light grid size-9 place-items-center rounded-full text-white transition-colors"
+                className="bg-brand-primary group-hover:bg-brand-primary-light grid size-9 place-items-center rounded-full text-white transition-colors"
               >
                 <ArrowUpLeft
                   className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"

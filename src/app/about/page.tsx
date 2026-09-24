@@ -1,4 +1,15 @@
-import { AboutBanner } from "@/features/about";
+import {
+  AboutBanner,
+  AboutProcess,
+  AboutTeam,
+  AboutTeamMembers,
+} from "@/features/about";
+import {
+  ClientReviews,
+  CtaBanner,
+  FeaturedProjects,
+  TrustedBy,
+} from "@/features/home";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -9,5 +20,16 @@ export const metadata = buildMetadata({
 });
 
 export default function AboutPage() {
-  return <AboutBanner />;
+  return (
+    <>
+      <AboutBanner />
+      <AboutTeam />
+      <AboutTeamMembers />
+      <AboutProcess />
+      <FeaturedProjects />
+      <TrustedBy />
+      <ClientReviews />
+      <CtaBanner />
+    </>
+  );
 }

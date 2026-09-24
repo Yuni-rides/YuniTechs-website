@@ -10,6 +10,8 @@ export type Project = {
   name: string;
   /** Small label under the name, e.g. "Website Development" */
   service: string;
+  /** Badge shown over the thumbnail in the featured grid */
+  category: string;
   /** Id of the filter tab this project belongs to */
   filter: ProjectFilterId;
   /** Full title used on the detail page */
@@ -86,6 +88,7 @@ export const projects: Project[] = [
     slug: "sterling-oak-partners",
     name: "Sterling Oak Partners",
     service: "Website Development",
+    category: "Artificial Intelligence",
     filter: "website",
     title: "Sterling Oak Partners — Corporate Website Design & Development",
     excerpt:
@@ -97,6 +100,7 @@ export const projects: Project[] = [
     slug: "bluepeak-solutions",
     name: "BluePeak Solutions",
     service: "Website Re-Design",
+    category: "Web Development",
     filter: "website",
     title: "BluePeak Solutions — Corporate Website Re-Design",
     excerpt:
@@ -108,6 +112,7 @@ export const projects: Project[] = [
     slug: "summit-ridge-consulting",
     name: "Summit Ridge Consulting",
     service: "Website Changes",
+    category: "SaaS Development",
     filter: "website",
     title: "Summit Ridge Consulting — Corporate Website Design & Development",
     excerpt:
@@ -119,6 +124,7 @@ export const projects: Project[] = [
     slug: "horizon-bridge-group",
     name: "Horizon Bridge Group",
     service: "Website Development",
+    category: "Artificial Intelligence",
     filter: "website",
     title: "Horizon Bridge Group — Corporate Website Design & Development",
     excerpt:
@@ -130,6 +136,7 @@ export const projects: Project[] = [
     slug: "redwood-strategic-advisors",
     name: "Redwood Strategic Advisors",
     service: "Website Re-Design",
+    category: "Web Development",
     filter: "website",
     title: "Redwood Strategic Advisors — Corporate Website Re-Design",
     excerpt:
@@ -141,6 +148,7 @@ export const projects: Project[] = [
     slug: "northstar-business-systems",
     name: "NorthStar Business Systems",
     service: "Website Changes",
+    category: "Cloud & DevOps",
     filter: "website",
     title: "NorthStar Business Systems — Corporate Website Improvements",
     excerpt:

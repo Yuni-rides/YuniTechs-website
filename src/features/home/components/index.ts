@@ -1,6 +1,7 @@
 export * from "./ai-automation";
 export * from "./client-reviews";
 export * from "./cta-banner";
+export * from "./featured-projects";
 export * from "./home-banner";
 export * from "./home-blog";
 export * from "./key-technologies";

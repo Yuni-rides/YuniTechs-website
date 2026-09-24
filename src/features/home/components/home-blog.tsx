@@ -104,14 +104,14 @@ export function HomeBlog() {
           <div className="group flex items-center gap-2">
             <Link
               href="/articles"
-              className="text-brand-primary hover:bg-brand-tertiary inline-flex h-12 items-center rounded-full bg-white px-7 text-[11px] font-medium tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_30px_-4px_var(--color-brand-tertiary)]"
+              className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-12 items-center rounded-full bg-white px-7 text-[11px] font-medium tracking-wider uppercase transition-all duration-300 group-hover:shadow-[0_0_30px_-4px_var(--color-brand-tertiary)]"
             >
               View all blogs
             </Link>
             <Link
               href="/articles"
               aria-label="View all blogs"
-              className="text-brand-primary hover:bg-brand-tertiary grid size-12 place-items-center rounded-full bg-white transition-all duration-300"
+              className="text-brand-primary group-hover:bg-brand-tertiary grid size-12 place-items-center rounded-full bg-white transition-all duration-300"
             >
               <ArrowUpLeft
                 className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"

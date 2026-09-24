@@ -95,11 +95,11 @@ export function AiAutomation() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-[0.9em] flex items-center gap-[0.12em]"
+              className="group mt-[0.9em] flex items-center gap-[0.12em]"
             >
               <Link
                 href="/contact"
-                className="text-brand-primary hover:bg-brand-tertiary inline-flex h-[2.1em] items-center rounded-full bg-white px-[1em] font-medium tracking-wider uppercase transition-colors"
+                className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-[2.1em] items-center rounded-full bg-white px-[1em] font-medium tracking-wider uppercase transition-colors"
               >
                 <span className="text-[max(0.38em,10px)]">
                   Discuss the vision
@@ -108,7 +108,7 @@ export function AiAutomation() {
               <Link
                 href="/contact"
                 aria-label="Discuss the vision"
-                className="text-brand-primary hover:bg-brand-tertiary grid size-[2.1em] place-items-center rounded-full bg-white transition-colors"
+                className="text-brand-primary group-hover:bg-brand-tertiary grid size-[2.1em] place-items-center rounded-full bg-white transition-colors"
               >
                 <ArrowUpLeft
                   className="size-[0.6em]"

@@ -307,14 +307,14 @@ export function CtaBanner() {
             <div className="group flex items-center gap-2">
               <Link
                 href="/contact"
-                className="text-brand-primary hover:bg-brand-tertiary inline-flex h-14 items-center rounded-full bg-white px-9 text-[11px] font-medium tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_30px_-4px_var(--color-brand-tertiary)]"
+                className="text-brand-primary group-hover:bg-brand-tertiary inline-flex h-14 items-center rounded-full bg-white px-9 text-[11px] font-medium tracking-wider uppercase transition-all duration-300 group-hover:shadow-[0_0_30px_-4px_var(--color-brand-tertiary)]"
               >
                 Let&rsquo;s get started
               </Link>
               <Link
                 href="/contact"
                 aria-label="Let's get started"
-                className="text-brand-primary hover:bg-brand-tertiary grid size-14 place-items-center rounded-full bg-white transition-all duration-300"
+                className="text-brand-primary group-hover:bg-brand-tertiary grid size-14 place-items-center rounded-full bg-white transition-all duration-300"
               >
                 <ArrowUpLeft
                   className="size-5 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
