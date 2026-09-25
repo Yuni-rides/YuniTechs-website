@@ -7,9 +7,7 @@ export type ArticleSection = {
 export type Article = {
   slug: string;
   title: string;
-  /** Badge shown on the card */
   category: string;
-  /** Id of the filter tab this article belongs to */
   filter: FilterId;
   author: string;
   readingMinutes: number;
@@ -44,7 +42,7 @@ export const articles: Article[] = [
     title: "How AI Is Transforming Modern Businesses in 2026",
     category: "AI & Automation",
     filter: "ai",
-    author: "Yuni Solution Team",
+    author: "Yuni Tech Team",
     readingMinutes: 6,
     excerpt:
       "From autonomous agents to predictive operations, AI has moved from pilot projects into the core of how modern companies run.",

@@ -6,11 +6,11 @@ import {
 } from "@/features/services";
 import { buildMetadata } from "@/lib/seo";
 import { homeFaqs } from "@/features/home/data/faqs";
-import { KeyTechnologies } from "@/features/home";
+import { KeyTechnologies, MoveTogether } from "@/features/home";
 
 export const metadata = buildMetadata({
   title: "Services",
-  description: "Web, mobile, cloud, and design services from Yuni Solutions.",
+  description: "Web, mobile, cloud, and design services from Yuni Techs.",
   path: "/services",
 });
 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
         items={homeFaqs}
         intro={
           <p>
-            <strong>Yuni Solution</strong> delivers custom software, AI-powered
+            <strong>Yuni Tech</strong> delivers custom software, AI-powered
             applications, modern websites, and scalable digital solutions
             designed to help businesses innovate, grow, and stay ahead in an
             ever-evolving digital landscape. Operating from{" "}
@@ -34,6 +34,7 @@ export default function ServicesPage() {
           </p>
         }
       />
+      <MoveTogether />
       <KeyTechnologies />
       <ServicesCta />
     </>

@@ -5,7 +5,7 @@ import {
   HomeBanner,
   HomeBlog,
   KeyTechnologies,
-  OurProduct,
+  MoveTogether,
   OurWork,
   TrustedBy,
 } from "@/features/home";
@@ -24,6 +24,7 @@ export default function HomePage() {
       <OurWork />
       <ServicesAccordion />
       <ClientReviews />
+      <MoveTogether />
       <KeyTechnologies />
       <HomeBlog />
       <AiAutomation />

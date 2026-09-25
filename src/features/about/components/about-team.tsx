@@ -36,7 +36,7 @@ export function AboutTeam() {
             <div className="relative aspect-[1270/592]">
               <Image
                 src="/images/teamBanner.png"
-                alt="The Yuni Solutions team"
+                alt="The Yuni Tech team"
                 fill
                 sizes="(min-width: 1024px) 1200px, 100vw"
                 loading="lazy"
@@ -50,7 +50,7 @@ export function AboutTeam() {
             className="mt-8 ml-auto max-w-[475px] text-[11px] leading-relaxed text-white/85 lg:mt-10"
           >
             <span className="text-brand-secondary font-semibold">
-              Yuni Solutions
+              Yuni Tech
             </span>{" "}
             brings together a powerful collective of software architects, UI/UX
             strategists, and product minds dedicated to engineering high-impact

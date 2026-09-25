@@ -15,7 +15,7 @@ const team: TeamMember[] = [
   { name: "Yousuf Taj", role: "CEO / Founder", image: "/images/owner.png" },
   {
     name: "Rami Abuarafeh",
-    role: "Marketing Manager",
+    role: "Marketing Director",
     image: "/images/marketing-manager.png",
   },
   {

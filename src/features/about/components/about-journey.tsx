@@ -13,12 +13,11 @@ type Milestone = {
   image: string;
 };
 
-// TODO: replace the body copy with the final editorial text.
 const milestones: Milestone[] = [
   {
     number: "01",
     title: "The vision",
-    body: "Founded in 2020 by Yousuf Taj, Yuni Solution was built with a clear ambition — to help businesses embrace digital transformation through precision technology, intelligent systems, and future-ready solutions. From the beginning, our mission has been clear: strip away complexity, deliver premium software, and build the invisible infrastructure that drives real growth.",
+    body: "Founded in 2020 by Yousuf Taj, Yuni Tech was built with a clear ambition — to help businesses embrace digital transformation through precision technology, intelligent systems, and future-ready solutions. From the beginning, our mission has been clear: strip away complexity, deliver premium software, and build the invisible infrastructure that drives real growth.",
     image: "/images/journey1.png",
   },
   {
@@ -30,13 +29,13 @@ const milestones: Milestone[] = [
   {
     number: "03",
     title: "Global expansion",
-    body: "As our expertise expanded, so did our reach. Yuni Solution now works with clients across continents, delivering CRM systems, SaaS platforms, AI automation, and custom software. Our distributed team keeps delivery moving around the clock, turning time zones into an advantage rather than an obstacle.",
+    body: "As our expertise expanded, so did our reach. Yuni Tech now works with clients across continents, delivering CRM systems, SaaS platforms, AI automation, and custom software. Our distributed team keeps delivery moving around the clock, turning time zones into an advantage rather than an obstacle.",
     image: "/images/journey3.png",
   },
   {
     number: "04",
     title: "Future forward",
-    body: "Today, Yuni Solution stands as a trusted technology partner for startups, enterprises, and ambitious founders alike. We continue building digital ecosystems that blend growth, automation, and design — shaping the future of intelligent software, one partnership at a time.",
+    body: "Today, Yuni Tech stands as a trusted technology partner for startups, enterprises, and ambitious founders alike. We continue building digital ecosystems that blend growth, automation, and design — shaping the future of intelligent software, one partnership at a time.",
     image: "/images/journey4.png",
   },
 ];
@@ -45,18 +44,9 @@ export function AboutJourney() {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLUListElement>(null);
 
-  /**
-   * The section only pins and scrolls sideways on large screens, and never for
-   * visitors who prefer reduced motion — hijacking the page scroll is hostile
-   * on touch and for anyone sensitive to motion. Everywhere else the same
-   * markup is just a normal horizontally scrollable row.
-   */
   const [pinned, setPinned] = useState(false);
   const [measured, setMeasured] = useState(0);
 
-  // One observer drives both flags. A ResizeObserver on the document is used
-  // rather than the window "resize" event because some embedded/emulated
-  // browsers never fire resize or matchMedia "change" on a viewport change.
   useEffect(() => {
     const mq = window.matchMedia(
       "(min-width: 1024px) and (prefers-reduced-motion: no-preference)",
@@ -68,7 +58,6 @@ export function AboutJourney() {
 
       const track = trackRef.current;
       if (shouldPin && track) {
-        // How far the track must travel so the last card finishes flush right.
         setMeasured(Math.max(0, track.scrollWidth - window.innerWidth));
       }
     };

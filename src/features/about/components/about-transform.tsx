@@ -44,7 +44,7 @@ export function AboutTransform() {
               id="about-transform-heading"
               className="font-heading text-[clamp(1.5rem,3.15vw,2.6rem)] leading-[1.24] font-bold tracking-tight text-white uppercase"
             >
-              Yuni Solutions doesn&rsquo;t just create digital products &ndash;
+              Yuni Tech doesn&rsquo;t just create digital products &ndash;
               we transform businesses.
             </motion.h2>
 

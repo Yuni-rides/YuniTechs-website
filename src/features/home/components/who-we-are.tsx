@@ -73,7 +73,7 @@ export function WhoWeAre() {
                 we are
               </h2>
               <p className="mt-4 max-w-[300px] text-[11px] leading-relaxed text-white/85">
-                Yuni Solution is a team of skilled developers, UI/UX designers,
+                Yuni Tech is a team of skilled developers, UI/UX designers,
                 and digital strategists dedicated to building custom software,
                 SaaS platforms, AI-powered solutions, and scalable digital
                 products that drive business growth.

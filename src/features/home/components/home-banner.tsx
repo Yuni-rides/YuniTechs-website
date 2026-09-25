@@ -55,7 +55,7 @@ export function HomeBanner() {
               className="order-3 flex flex-col gap-5 lg:pt-4"
             >
               <p className="max-w-[220px] text-[11px] leading-relaxed text-white/85">
-                stop settling for average. Yuni solution is your fast-track
+                stop settling for average. Yuni Tech is your fast-track
                 partner to scale your business with unified, robust software.
                 Join Kilo. Health, Eskimi, and 50+ partners already ahead of
                 the curve.
