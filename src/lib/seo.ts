@@ -9,10 +9,6 @@ type PageMetadataOptions = {
   noIndex?: boolean;
 };
 
-/**
- * Build consistent, SEO-friendly metadata for any route.
- * Route-level metadata merges with the root layout template.
- */
 export function buildMetadata({
   title,
   description = siteConfig.description,

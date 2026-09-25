@@ -1,8 +1,10 @@
 import {
   AboutBanner,
+  AboutJourney,
   AboutProcess,
   AboutTeam,
   AboutTeamMembers,
+  AboutTransform,
 } from "@/features/about";
 import {
   ClientReviews,
@@ -15,7 +17,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "About",
   description:
-    "Yuni Solutions is a team of developers, designers, and strategists building software that moves businesses forward.",
+    "Yuni Tech is a team of developers, designers, and strategists building software that moves businesses forward.",
   path: "/about",
 });
 
@@ -24,8 +26,10 @@ export default function AboutPage() {
     <>
       <AboutBanner />
       <AboutTeam />
+      <AboutJourney />
       <AboutTeamMembers />
       <AboutProcess />
+      <AboutTransform />
       <FeaturedProjects />
       <TrustedBy />
       <ClientReviews />

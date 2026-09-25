@@ -14,9 +14,8 @@ import { Container } from "@/components/ui";
 import { testimonials } from "@/features/home/data/testimonials";
 import type { Testimonial } from "@/types";
 
-/** px per second the track auto-scrolls */
+
 const AUTO_SPEED = 40;
-/** Render the list this many times so dragging never reveals an edge */
 const COPIES = 3;
 
 export function ClientReviews() {

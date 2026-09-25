@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpLeft, Menu, X } from "lucide-react";
 import { Container } from "@/components/ui";
@@ -14,11 +14,29 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="bg-brand-primary sticky top-0 z-50 pt-4 lg:pt-6">
+    <header className="sticky top-0 z-50 pt-4 lg:pt-6">
       <Container>
-        <div className="flex h-16 items-center justify-between rounded-full border border-white/70 px-3 pl-4 lg:h-[72px] lg:px-4 lg:pl-6">
+        <div
+          className={cn(
+            "flex h-16 items-center justify-between rounded-full border px-3 pl-4 transition-all duration-300 lg:h-[72px] lg:px-4 lg:pl-6",
+            // scrolled
+            //   ? "bg-brand-primary/50 border-white/20 shadow-lg backdrop-blur-xl"
+            //   : "border-white/70 bg-transparent",
+            scrolled
+              ? "glass-nav border-white/25"
+              : "border-white/70 bg-transparent",
+          )}
+        >
           <Link
             href="/"
             aria-label={`${siteConfig.name} home`}
@@ -33,7 +51,7 @@ export function Navbar() {
               className="h-8 w-auto lg:h-9"
             />
             <span className="text-xl font-medium text-white lg:text-2xl">
-              Yunitechs
+              Yuni Tech
             </span>
           </Link>
 
@@ -82,7 +100,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden lg:hidden"
+            className="bg-brand-primary/90 overflow-hidden backdrop-blur-xl lg:hidden"
           >
             <Container className="flex flex-col gap-1 py-4">
               {mainNav.map((item) => (

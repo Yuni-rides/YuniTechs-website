@@ -21,7 +21,7 @@ export const footerServices: NavItem[] = [
   { label: "CRM Systems", href: "/services#crm-systems" },
   { label: "E-Commerce Solutions", href: "/services#e-commerce" },
   { label: "Landing Pages", href: "/services#landing-pages" },
-  { label: "Website Redesign", href: "/services#website-redesign" },
+  { label: "Ai Automation", href: "/services#website-redesign" },
   { label: "Application Development", href: "/services#application-development" },
   { label: "Search Engine Optimization", href: "/services#seo" },
 ];

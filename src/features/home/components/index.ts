@@ -5,6 +5,7 @@ export * from "./featured-projects";
 export * from "./home-banner";
 export * from "./home-blog";
 export * from "./key-technologies";
+export * from "./our-product";
 export * from "./our-work";
 export * from "./trusted-by";
 export * from "./who-we-are";

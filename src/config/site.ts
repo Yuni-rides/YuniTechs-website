@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "Yuni Solutions",
+  name: "Yuni Tech",
   shortName: "Yuni",
   description:
-    "Yuni Solutions builds modern digital products — web, mobile, and cloud solutions engineered for growth.",
+    "Yuni Tech builds modern digital products — web, mobile, and cloud solutions engineered for growth.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://yunisolutions.com",
   locale: "en_US",
   keywords: [
-    "Yuni Solutions",
+    "Yuni Tech",
     "software development",
     "web development",
     "mobile app development",
@@ -22,7 +22,6 @@ export const siteConfig = {
     phone: "+1 (416) 000-000",
   },
   offices: [
-    { city: "Karachi", address: "Block 14, Gulistan-e-Johar, Karachi" },
     { city: "California", address: "abcd, abcd, California" },
   ],
   tagline:

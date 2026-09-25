@@ -5,6 +5,7 @@ import {
   HomeBanner,
   HomeBlog,
   KeyTechnologies,
+  OurProduct,
   OurWork,
   TrustedBy,
 } from "@/features/home";
@@ -30,7 +31,7 @@ export default function HomePage() {
         items={homeFaqs}
         intro={
           <p>
-            <strong>Yuni Solution</strong> delivers custom software, AI-powered
+            <strong>Yuni Tech</strong> delivers custom software, AI-powered
             applications, modern websites, and scalable digital solutions
             designed to help businesses innovate, grow, and stay ahead in an
             ever-evolving digital landscape. Operating from{" "}

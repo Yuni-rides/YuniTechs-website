@@ -22,7 +22,7 @@ const socials: { label: string; href: string; icon: SocialIcon }[] = [
 ];
 
 const photos = [
-  { src: "/images/about3.png", alt: "Yuni Solution office" },
+  { src: "/images/about3.png", alt: "Yuni Tech office" },
   { src: "/images/about4.png", alt: "Team working together" },
   { src: "/images/about2.png", alt: "Team celebration" },
 ];
@@ -50,7 +50,7 @@ export function Footer() {
               ))}
             </ul>
             <p className="mt-10 text-[11px]">
-              © {new Date().getFullYear()} Yuni Solution. All Rights Reserved.
+              © {new Date().getFullYear()} Yuni Tech. All Rights Reserved.
             </p>
             <p className="mt-4 max-w-[230px] text-[11px] leading-relaxed">
               {siteConfig.tagline}
