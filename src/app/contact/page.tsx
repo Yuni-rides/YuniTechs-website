@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Contact",
-  description: "Get in touch with Yuni Solutions to start your project.",
+  description: "Get in touch with Yuni Tech to start your project.",
   path: "/contact",
 });
 

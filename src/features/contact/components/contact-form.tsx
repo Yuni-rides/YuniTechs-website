@@ -25,7 +25,9 @@ const labelClass = "mb-2 block text-sm text-brand-primary";
 
 export function ContactForm() {
   const [selected, setSelected] = useState<string[]>([SERVICES[0]]);
-  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
 
   const toggle = (service: string) =>
     setSelected((prev) =>
@@ -36,7 +38,10 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    // Captured before the await: React nulls out currentTarget once the
+    // handler returns, so reading it after the fetch would throw.
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const payload = {
       services: selected,
       budget: data.get("budget"),
@@ -55,9 +60,9 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-      event.currentTarget.reset();
+      form.reset();
       setSelected([SERVICES[0]]);
-      setStatus("idle");
+      setStatus("sent");
     } catch {
       setStatus("error");
     }
@@ -291,6 +296,13 @@ export function ContactForm() {
                   className={cn(inputClass, "resize-y")}
                 />
               </div>
+
+              {status === "sent" && (
+                <p role="status" className="mt-4 text-xs text-green-700">
+                  Thanks — your message is on its way. We&rsquo;ll get back to
+                  you shortly.
+                </p>
+              )}
 
               {status === "error" && (
                 <p role="alert" className="mt-4 text-xs text-red-600">
