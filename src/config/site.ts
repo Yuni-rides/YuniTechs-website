@@ -22,7 +22,7 @@ export const siteConfig = {
     phone: "+1 (416) 000-000",
   },
   offices: [
-    { city: "California", address: "abcd, abcd, California" },
+    { city: "California", address: "2261 Market St, Suite 2015 San Francisco, CA 94114" },
   ],
   tagline:
     "Empowering businesses through innovative technology, creative design, and scalable digital solutions.",
