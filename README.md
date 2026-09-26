@@ -1,4 +1,4 @@
-# Yuni Solutions — Website
+# Yuni Tech — Website
 
 Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide React
 

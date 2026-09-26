@@ -1,7 +1,23 @@
-export type ProjectSection = {
+/** A single headline metric in the results row on the detail page. */
+export type ProjectStat = {
+  value: string;
+  label: string;
+  description: string;
+};
+
+/** "The challenge" section. The side image differs per project. */
+export type ProjectChallengeContent = {
   heading: string;
-  body?: string[];
-  bullets?: string[];
+  body: string;
+  image: string;
+  imageAlt: string;
+};
+
+/** "The outcome" closing section — headline figures plus a summary. */
+export type ProjectOutcomeContent = {
+  heading: string;
+  body: string;
+  stats: { value: string; label: string }[];
 };
 
 export type Project = {
@@ -19,7 +35,16 @@ export type Project = {
   excerpt: string;
   // TODO: swap these placeholders for the real project screenshots.
   image: string;
-  sections: ProjectSection[];
+  // TODO: replace with the real per-project figures.
+  stats: ProjectStat[];
+  challenge: ProjectChallengeContent;
+  /** Four "How we did it" lines. The icons beside them are the same site-wide. */
+  approach: string[];
+  /** Device mockup for "A sample of what shipped" — differs per project. */
+  sample: { image: string; imageAlt: string };
+  outcome: ProjectOutcomeContent;
+  /** Four SWOT notes. Titles and artwork are the same across projects. */
+  swot: string[];
 };
 
 export const projectFilters = [
@@ -33,55 +58,75 @@ export const projectFilters = [
 
 export type ProjectFilterId = (typeof projectFilters)[number]["id"];
 
-const overview = (client: string, service: string): ProjectSection[] => [
+// TODO: replace with each project's real measured results.
+const defaultStats = (): ProjectStat[] => [
   {
-    heading: "Project overview",
-    body: [
-      `${client} approached Yuni Solutions to modernise their digital presence with a sleek, professional, and conversion-focused corporate website. Their existing online presence lacked clarity, modern branding, and a structured user experience that reflected their expertise.`,
-      `The objective was to design a premium website that positioned ${client} as a trusted, forward-thinking partner for organisations across multiple industries.`,
-    ],
+    value: "40%",
+    label: "Faster Booking Time",
+    description:
+      "Users can now book in less time with a simplified and intuitive flow.",
   },
   {
-    heading: "The challenge",
-    body: [
-      `${client} needed a website that could effectively communicate their value proposition while maintaining a strong corporate identity.`,
-      "Some of the key challenges included:",
-    ],
-    bullets: [
-      "Outdated visual appearance that did not reflect their professional standards",
-      "Poor user navigation and unclear service presentation",
-      "Lack of a built-in, specific positioning",
-      "Limited engagement and weak call-to-action structure",
-      "Inconsistent branding across digital touchpoints",
-    ],
+    value: "12K+",
+    label: "App Downloads (First 3 Months)",
+    description:
+      "Streamlined access and a better experience led to a significant increase in completed bookings.",
   },
   {
-    heading: "Our approach",
-    body: [
-      `At Yuni Solutions, we focused on creating a modern, corporate, and highly professional digital experience built around ${service.toLowerCase()}.`,
-    ],
+    value: "4.7\u2605",
+    label: "Average App Store Rating",
+    description:
+      "A clearer experience reduced confusion and cut support requests by more than half.",
   },
   {
-    heading: "1. Brand & visual strategy",
-    body: [
-      "We designed a clean corporate interface using premium typography, modern layouts, and a minimal colour palette to create a trustworthy and executive-level feel.",
-      "The design emphasised:",
-    ],
-    bullets: [
-      "Professional credibility",
-      "Enterprise trust",
-      "Clean user experience",
-      "Strong visual hierarchy",
-      "Modern business aesthetics",
-    ],
-  },
-  {
-    heading: "2. Website architecture",
-    body: [
-      "We restructured the website to improve navigation and information flow. The new structure included a clear home page, service detail pages, an industries hub, an insights library, and a conversion-focused contact journey.",
-    ],
+    value: "65%",
+    label: "Increase in Repeat Users",
+    description:
+      "Users rated the app highly for its ease of use, reliability, and overall experience.",
   },
 ];
+
+// TODO: supply the real mockup per project; falls back to the cover image.
+const defaultChallenge = (client: string, image: string): ProjectChallengeContent => ({
+  heading: "Where things stood.",
+  body: `${client}'s booking process was manual, relying on phone calls, spreadsheets, and back-and-forth coordination. This made it time-consuming for users, increased the risk of errors, and created operational inefficiencies for their team. As demand grew, it became clear they needed a modern, mobile-first solution to streamline the entire experience.`,
+  image,
+  imageAlt: `The ${client} app shown on two phones`,
+});
+
+// TODO: replace with each project's real delivery notes.
+const defaultApproach = (): string[] => [
+  "Designed a streamlined booking flow that reduced the process to three taps",
+  "Built native iOS and Android apps for consistent performance across devices",
+  "Integrated real-time availability and push notifications to cut missed appointments",
+  "Ran continuous usability testing to refine the flow before and after launch",
+];
+
+// TODO: the designer will supply a mockup per project; shared for now.
+const defaultSample = (client: string) => ({
+  image: "/images/projectSample.png",
+  imageAlt: `Screens from the ${client} project shown on desktop and tablet`,
+});
+
+// TODO: replace with each project's real measured outcome.
+// TODO: replace with each project's real SWOT notes.
+const defaultSwot = (): string[] => [
+  "A clear customer need, an engaged stakeholder team, and a strong foundation of domain knowledge gave us a solid starting point for a successful build.",
+  "The existing process was highly manual, with fragmented systems and limited real-time visibility, which created inefficiencies and a higher risk of errors.",
+  "Growing demand and a shift towards digital adoption created an opportunity to deliver a modern, mobile-first solution that could scale across regions.",
+  "Increasing competition, evolving customer expectations, and changing regulations posed external challenges that required a flexible and future-ready approach.",
+];
+
+const defaultOutcome = (): ProjectOutcomeContent => ({
+  heading: "What changed.",
+  body: "The new platform streamlined the entire experience, making it faster, easier, and more reliable for both users and the operations team. Bookings are now completed in minutes, real-time visibility has improved coordination, and manual work has been significantly reduced — allowing the team to focus on what matters most: delivering a better, more dependable service.",
+  stats: [
+    { value: "60%", label: "Faster booking time" },
+    { value: "50%", label: "Reduction in manual work" },
+    { value: "2X", label: "More completed trips" },
+    { value: "95%", label: "User satisfaction" },
+  ],
+});
 
 export const projects: Project[] = [
   {
@@ -94,7 +139,12 @@ export const projects: Project[] = [
     excerpt:
       "A premium corporate website that positions Sterling Oak Partners as a trusted advisory firm.",
     image: "/images/Articales-1.png",
-    sections: overview("Sterling Oak Partners", "Website Development"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("Sterling Oak Partners", "/images/Articales-1.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("Sterling Oak Partners"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
   {
     slug: "bluepeak-solutions",
@@ -106,7 +156,12 @@ export const projects: Project[] = [
     excerpt:
       "A full re-design that clarified BluePeak's services and modernised their brand online.",
     image: "/images/Articales-2.png",
-    sections: overview("BluePeak Solutions", "Website Re-Design"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("BluePeak Solutions", "/images/Articales-2.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("BluePeak Solutions"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
   {
     slug: "summit-ridge-consulting",
@@ -118,7 +173,12 @@ export const projects: Project[] = [
     excerpt:
       "A sleek, conversion-focused corporate website for a multi-industry consulting practice.",
     image: "/images/Articales-3.png",
-    sections: overview("Summit Ridge Consulting", "Website Changes"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("Summit Ridge Consulting", "/images/Articales-3.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("Summit Ridge Consulting"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
   {
     slug: "horizon-bridge-group",
@@ -130,7 +190,12 @@ export const projects: Project[] = [
     excerpt:
       "A structured, enterprise-ready site built around Horizon Bridge Group's service lines.",
     image: "/images/Articales-4.png",
-    sections: overview("Horizon Bridge Group", "Website Development"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("Horizon Bridge Group", "/images/Articales-4.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("Horizon Bridge Group"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
   {
     slug: "redwood-strategic-advisors",
@@ -142,7 +207,12 @@ export const projects: Project[] = [
     excerpt:
       "A refreshed identity and information architecture for a strategic advisory firm.",
     image: "/images/Articales-5.png",
-    sections: overview("Redwood Strategic Advisors", "Website Re-Design"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("Redwood Strategic Advisors", "/images/Articales-5.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("Redwood Strategic Advisors"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
   {
     slug: "northstar-business-systems",
@@ -154,7 +224,12 @@ export const projects: Project[] = [
     excerpt:
       "Targeted changes that lifted clarity, performance, and conversion across the site.",
     image: "/images/Articales-6.png",
-    sections: overview("NorthStar Business Systems", "Website Changes"),
+    stats: defaultStats(),
+    challenge: defaultChallenge("NorthStar Business Systems", "/images/Articales-6.png"),
+    approach: defaultApproach(),
+    sample: defaultSample("NorthStar Business Systems"),
+    outcome: defaultOutcome(),
+    swot: defaultSwot(),
   },
 ];
 

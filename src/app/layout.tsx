@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Inter } from "next/font/google";
+import { Archivo, Inter, Inter_Tight } from "next/font/google";
 import { Footer, Navbar } from "@/components/layout";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
@@ -14,6 +14,15 @@ const archivo = Archivo({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+// Narrow cut of Inter, used for large display figures and headings. Inter's
+// own digits run ~18% wider than the design's; Inter Tight lands within 4%
+// while keeping the same family, so the page still reads as one typeface.
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
   display: "swap",
 });
 
@@ -56,7 +65,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${archivo.variable}`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable} ${archivo.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main-content"

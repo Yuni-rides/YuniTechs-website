@@ -3,6 +3,13 @@ import Link from "next/link";
 import { ArrowUpLeft } from "lucide-react";
 import { Container } from "@/components/ui";
 import { ProjectCard } from "@/features/projects/components/project-card";
+import { ProjectApproach } from "@/features/projects/components/project-approach";
+import { ProjectChallenge } from "@/features/projects/components/project-challenge";
+import { ProjectCta } from "@/features/projects/components/project-cta";
+import { ProjectGallery } from "@/features/projects/components/project-gallery";
+import { ProjectSwot } from "@/features/projects/components/project-swot";
+import { ProjectOutcome } from "@/features/projects/components/project-outcome";
+import { ProjectStats } from "@/features/projects/components/project-stats";
 import type { Project } from "@/features/projects/data/projects";
 
 export function ProjectDetail({
@@ -69,48 +76,25 @@ export function ProjectDetail({
           </div>
         </Container>
       </header>
-
       <Container>
-        <div className="mx-auto max-w-4xl pt-[calc(18%+2rem)] pb-14 lg:pb-20">
-          {project.sections.map((section) => (
-            <section key={section.heading} className="mt-12 first:mt-0">
-              <h2 className="text-lg tracking-wide text-white uppercase sm:text-xl">
-                {section.heading}
-              </h2>
-
-              {section.body?.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="mt-4 text-[13px] leading-relaxed text-white/75 sm:text-justify"
-                >
-                  {paragraph}
-                </p>
-              ))}
-
-              {section.bullets && (
-                <ul className="mt-3 pl-4">
-                  {section.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="text-[13px] leading-relaxed text-white/75"
-                    >
-                      <span aria-hidden className="mr-2">
-                        ·
-                      </span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
-        </div>
+        <div aria-hidden className="pt-[14%]" />
       </Container>
+
+      <ProjectStats stats={project.stats} />
+      <ProjectChallenge challenge={project.challenge} />
+      <ProjectApproach steps={project.approach} />
+      <ProjectGallery
+        image={project.sample.image}
+        imageAlt={project.sample.imageAlt}
+      />
+      <ProjectSwot points={project.swot} />
+      <ProjectOutcome outcome={project.outcome} />
+      <ProjectCta />
 
       {related.length > 0 && (
         <section
           aria-labelledby="related-projects-heading"
-          className="pb-16 lg:pb-24"
+          className="py-16"
         >
           <Container>
             <h2
